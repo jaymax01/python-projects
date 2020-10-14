@@ -1,0 +1,11 @@
+import pandas as pd
+data = pd.read_csv("data/CRDC2013_14.csv", encoding="Latin-1")
+JJ = data["JJ"].value_counts()
+Magnet = data["SCH_STATUS_MAGNET"].value_counts()
+print(JJ)
+print(Magnet)
+JJ_agg = pd.pivot_table(data, values=["TOT_ENR_M", "TOT_ENR_F"], index="JJ", aggfunc="sum")
+Magnet_agg = pd.pivot_table(data, values=["TOT_ENR_M", "TOT_ENR_F"], index="SCH_STATUS_MAGNET", aggfunc="sum")
+print(JJ_agg)
+print()
+print(Magnet_agg)

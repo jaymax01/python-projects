@@ -1,0 +1,89 @@
+/home/dq/scripts$ python read.py
+/home/dq/scripts$ python count.py
+
+def load_data():
+    import pandas as pd
+    col_Names=["submission_time", "upvotes", "url", "headline"]
+    data =             pd.read_csv("hn_stories.csv",names=col_Names)
+    return data
+# first_ten = data.head()
+print(load_data())
+
+import read
+from collections import Counter
+
+df = read.load_data() # importing the data
+headlines = df['headline']
+# print(headlines.head())
+
+string = headlines.str.cat(sep='').lower() # series into a single string
+# print(string)
+spt_string = string.split() # split single string 
+# print(spt_string)
+
+c = Counter(spt_string).most_common(100)
+print(c)
+
+#  word count dictionary
+# word_count = { }
+# for word in spt_string:
+#     if word in word_count:
+#         word_count[word] += 1
+#     else:
+#         word_count[word] = 1
+        
+# # print top 100 words
+# s = sorted(word_count, key=word_count.get, reverse=True)
+# print(s[0:100])
+
+
+import read
+from collections import Counter
+
+data_f = read.load_data()
+# print(data_f)
+# col = data_f.columns
+# print(col)
+urls = data_f['url']
+urls_1 = urls.astype(str)
+# print(urls_1)
+# print(urls)
+# print(urls_1.dtype)
+u_list = []
+for u in urls_1:
+    u_spt = u.split('.')
+    if len(u_spt) > 1:
+        u_spt1 = u_spt[-2] + '.' + u_spt[-1]
+        u_list.append(u_spt1)
+    else:
+        continue
+
+# Print top 100 domains
+counts = Counter(u_list).most_common(100)
+print(counts)
+
+# counts = urls.value_counts().head(100)
+# print(counts)
+
+
+/home/dq/scripts$ python count.py 
+
+import read
+df_2 = read.load_data()
+time = df_2['submission_time']
+# print(time)
+
+def extract_hr(time): # extracting the hour 
+    from dateutil import parser
+    dt = parser.parse(time)
+    hour = dt.hour
+    return hour
+
+# t_0 = time[0]
+# time_1 = extract_hr(t_0)
+# print(time_1)
+
+df_2['submission_hours'] = time.apply(extract_hr)
+freq_hours = df_2['submission_hours'].value_counts()
+print(freq_hours)
+

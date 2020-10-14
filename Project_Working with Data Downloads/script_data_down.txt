@@ -1,0 +1,216 @@
+/home/dq/scripts$ ls -l                                                         
+total 376                                                                       
+-rwxrwxrwx 1 dq dq 360915 Jun  7 11:05 crdc201314csv.zip                        
+drwxr-xr-x 2 dq dq   4096 Jun  6 19:07 data                                     
+-rwxr-xr-x 1 dq dq    645 Jun  6 19:12 enrollment.py                            
+-rwxr-xr-x 1 dq dq    430 Jun  6 19:12 exploration.py                           
+-rwxr-xr-x 1 dq dq      2 Jun  6 15:02 findings.txt                             
+-rwxr-xr-x 1 dq dq     99 Jun  6 19:12 read.py                                  
+/home/dq/scripts$ pip freeze                                                    
+backports-abc==0.5                                                              
+backports.shutil-get-terminal-size==1.0.0                                       
+basemap==1.2.0                                                                  
+beautifulsoup4==4.4.1                                                           
+bleach==3.1.0                                                                   
+certifi==2019.3.9                                                               
+chardet==3.0.4                                                                  
+Click==7.0                                                                      
+csvkit==0.9.2                                                                   
+cycler==0.10.0                                                                  
+decorator==4.4.0                                                                
+defusedxml==0.5.0                                                               
+Django==1.9                                                                     
+entrypoints==0.3                                                                
+Flask==0.11.1                                                                   
+html5lib==1.0b8                                                                 
+idna==2.8                                                                       
+ipykernel==4.5.2                                                                
+ipython==4.2.0                                                                  
+ipython-genutils==0.2.0                                                         
+ipython-sql==0.3.6                                                              
+ipywidgets==4.1.1                                                               
+itsdangerous==1.1.0                                                             
+jdcal==1.4.1                                                                    
+Jinja2==2.8                                                                     
+jsonschema==2.5.0                                                               
+jupyter==1.0.0                                                                  
+jupyter-client==4.0.0                                                           
+jupyter-console==4.0.0                                                          
+jupyter-core==4.0.0                                                             
+MarkupSafe==1.1.1                                                               
+matplotlib==1.5.1                                                               
+mistune==0.8.4                                                                  
+mpmath==1.1.0                                                                   
+nbformat==4.4.0                                                                 
+nltk==3.0.2                                                                     
+notebook==4.3.1                                                                 
+numpy==1.14.2                                                                   
+openpyxl==2.2.6                                                                 
+pandas==0.22.0                                                                  
+pandocfilters==1.4.2                                                            
+patsy==0.5.1                                                                    
+pexpect==3.3                                                                    
+pickleshare==0.7.5                                                              
+plotly==3.9.0                                                                   
+prettytable==0.7.2                                                              
+psycopg2==2.5.4                                                                 
+ptyprocess==0.6.0                                                               
+Pygments==2.3.1                                                                 
+pyparsing==2.4.0                                                                
+pyproj==1.9.6                                                                   
+pyshp==2.1.0                                                                    
+python-dateutil==2.2                                                            
+pytz==2019.1                                                                    
+pyzmq==14.7.0                                                                   
+qtconsole==4.5.1                                                                
+redis==2.10.5                                                                   
+requests==2.21.0                                                                
+retrying==1.3.3                                                                 
+scikit-learn==0.18                                                              
+scipy==0.18.0                                                                   
+seaborn==0.7.1                                                                  
+sentry-sdk==0.7.9                                                               
+simplegeneric==0.8.1                                                            
+six==1.12.0                                                                     
+socketIO-client==0.6.5                                                          
+SQLAlchemy==1.3.4                                                               
+sqlparse==0.3.0                                                                 
+statsmodels==0.8.0                                                              
+sympy==1.0                                                                      
+terminado==0.8.2                                                                
+testpath==0.4.2                                                                 
+tornado==4.3                                                                    
+traitlets==4.3.2                                                                
+urllib3==1.24.2                                                                 
+webencodings==0.5.1                                                             
+websocket-client==0.35.0                                                        
+Werkzeug==0.15.4                                                                
+xlrd==1.2.0                                                                     
+/home/dq/scripts$ python read.py                                                
+              NAME  VARNUM     TYPE  \                                          
+0        LEA_STATE       1     text                                             
+1         LEA_NAME       2     text                                             
+2         SCH_NAME       3     text                                             
+3         COMBOKEY       4     text                                             
+4            LEAID       5     text                                             
+5            SCHID       6     text                                             
+6               JJ       7     text                                             
+7       CCD_LATCOD       8  numeric                                             
+8       CCD_LONCOD       9  numeric                                             
+9   NCES_SCHOOL_ID      10     text                                             
+10      MATCH_FLAG      11     text                                             
+11    SCH_GRADE_PS      12     text                                             
+12    SCH_GRADE_KG      13     text                                             
+13   SCH_GRADE_G01      14     text                                             
+14   SCH_GRADE_G02      15     text                                             
+                                                                                
+                                                LABEL PART  QUESTION            
+0                                      District State  NaN       NaN            
+1                                       District Name  NaN       NaN            
+2                                         School Name  NaN       NaN            
+3   7 Digit LEAID District Identification Code+5 D...  NaN       NaN            
+4          7 Digit LEAID District Identification Code  NaN       NaN            
+5                  5 Digit School Identification Code  NaN       NaN            
+6   Juvenile Justice Facility: "Yes" indicates a l...  NaN       NaN            
+7                                       CCD: Latitude  NaN       NaN            
+8                                      CCD: Longitude  NaN       NaN            
+9                        Unique NCES School Identifer  NaN       NaN            
+10  Flag to indicate results of match list validation  NaN       NaN            
+11           Grades with Students Enrolled: Preschool    I       1.0            
+12        Grades with Students Enrolled: Kindergarten    I       1.0            
+13             Grades with Students Enrolled: Grade 1    I       1.0            
+14             Grades with Students Enrolled: Grade 2    I       1.0            
+/home/dq/scripts$ python exploration.py                                         
+NO     992                                                                      
+YES      8                                                                      
+Name: JJ, dtype: int64                                                          
+NO     948                                                                      
+YES     52                                                                      
+Name: SCH_STATUS_MAGNET, dtype: int64                                           
+TOT_ENR_F  TOT_ENR_M                                                       
+JJ                                                                              
+NO      252915     266702                                                       
+YES         71        427                                                       
+                                                                                
+                   TOT_ENR_F  TOT_ENR_M                                         
+SCH_STATUS_MAGNET                                                               
+NO                    232487     245629                                         
+YES                    20499      21500 
+/home/dq/scripts$ touch findings.txt                                            
+/home/dq/scripts$ ls -l                                                         
+total 372                                                                       
+-rwxrwxrwx 1 dq dq 360915 Jun  7 11:05 crdc201314csv.zip                        
+drwxr-xr-x 2 dq dq   4096 Jun  6 19:07 data                                     
+-rwxr-xr-x 1 dq dq    645 Jun  6 19:12 enrollment.py                            
+-rwxr-xr-x 1 dq dq    430 Jun  6 19:12 exploration.py                           
+-rw-r--r-- 1 dq dq      0 Jun  7 11:47 findings.txt                             
+-rwxr-xr-x 1 dq dq     99 Jun  6 19:12 read.py                                  
+/home/dq/scripts$ echo "Enrollment for both males and females in Magnet schools 
+is greater than enrollment in Juvenile institutuions. Non enrollment for both ge
+nders in both institution types is greater than the enrollemnt figures. While th
+e enrollment numbers of males and females for Magnet schools are roughly the sam
+e, enrollment of males in Juvenile institutions is 25 times as much as the enrol
+lment of females." > findings.txt           
+/home/dq/scripts$ pyhton enrollment.py                                          
+bash: pyhton: command not found                                                 
+/home/dq/scripts$ python enrollment.py                                          
+     SCH_ENR_HI_M  SCH_ENR_HI_F  SCH_ENR_AM_M  SCH_ENR_AM_F  SCH_ENR_AS_M  \    
+0             143           179             2             2            11       
+1              44            20             0             0            11       
+2              50            50             0             2            17       
+3               0            11             0             0             0       
+4               2             5             0             0             2       
+5               0             0             2             0             8       
+6              35            35             2             2            14       
+7              11            11             2             0             0       
+8              62            41            26            41             0       
+9               5             5             2             0             2       
+10            179           299             0             0             2       
+11              8            11             0             0             2       
+12            272           257             2             2             8       
+13             68            83            11             8             8       
+14             41            38             2             2             5       
+15              0             2             0             0             0       
+16             14            11             0             0             0       
+[1000 rows x 14 columns]                                                        
+SCH_ENR_HI_M     69917                                                          
+SCH_ENR_HI_F     66134                                                          
+SCH_ENR_AM_M      3771                                                          
+SCH_ENR_AM_F      3588                                                          
+SCH_ENR_AS_M     13388                                                          
+SCH_ENR_AS_F     12845                                                          
+SCH_ENR_HP_M       939                                                          
+SCH_ENR_HP_F       980                                                          
+SCH_ENR_BL_M     37493                                                          
+SCH_ENR_BL_F     35951                                                          
+SCH_ENR_WH_M    133709                                                          
+SCH_ENR_WH_F    125548                                                          
+SCH_ENR_TR_M      7912                                                          
+SCH_ENR_TR_F      7940                                                          
+dtype: int64                                                                    
+                                                                                
+520115                
+
+SCH_ENR_HI_M    0.134426                                                        
+SCH_ENR_HI_F    0.127153                                                        
+SCH_ENR_AM_M    0.007250                                                        
+SCH_ENR_AM_F    0.006898                                                        
+SCH_ENR_AS_M    0.025740                                                        
+SCH_ENR_AS_F    0.024696                                                        
+SCH_ENR_HP_M    0.001805                                                        
+SCH_ENR_HP_F    0.001884                                                        
+SCH_ENR_BL_M    0.072086                                                        
+SCH_ENR_BL_F    0.069121                                                        
+SCH_ENR_WH_M    0.257076                                                        
+SCH_ENR_WH_F    0.241385                                                        
+SCH_ENR_TR_M    0.015212                                                        
+SCH_ENR_TR_F    0.015266                                                        
+dtype: float64                                                                  
+/home/dq/scripts$ echo "Whites make up 73% of the total population of the United
+ States and White male and female enrollment in schools makes up approximately h
+alf of the total enrollment. While Blacks and Asians make up about 13% and 5% of
+ the total population respectively, they only make up a combined 19% of the tota
+l enrollment compared to Hispanic enrollment at about 26% with a total populatio
+n of approximately 4.8%. There are just as many males than there are females mak
+ing up the total population which is the case for school enrollment with enrollm
+ent of males slightly higher." > findings.txt
